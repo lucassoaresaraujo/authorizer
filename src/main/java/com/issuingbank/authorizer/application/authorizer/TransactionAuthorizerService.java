@@ -30,7 +30,7 @@ public class TransactionAuthorizerService {
     private final DebitProcessor debitProcessor;
     private final MccResolverService mccResolverService;
 
-    @Transactional()
+    @Transactional(timeout = 1) // 1 second
     public AuthorizationResponse execute(UUID idempotencyKey, AuthorizationRequest request) {
         if (!request.isValid()) {
             return AuthorizationResponse.from(AuthorizationResponseType.UNEXPECTED_ERROR.getCode());
