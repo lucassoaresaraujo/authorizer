@@ -91,14 +91,6 @@ public class Balance {
         return this.getBalance(balanceType).compareTo(amount) >= 0;
     }
 
-    public void debitAmount(BalanceType balanceType, BigDecimal amount) {
-        if (amount == null || amount.compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Invalid amount");
-        }
-
-        this.setBalance(balanceType, getBalance(balanceType).subtract(amount));
-    }
-
     public Balance debit(BalanceType balanceType, BigDecimal amount) {
         if (amount == null || amount.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("Invalid amount");

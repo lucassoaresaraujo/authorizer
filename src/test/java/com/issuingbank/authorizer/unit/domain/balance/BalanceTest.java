@@ -197,10 +197,10 @@ public class BalanceTest {
                     .build();
 
             // When
-            balance.debitAmount(BalanceType.CASH, BigDecimal.valueOf(50));
+            Balance newBalance = balance.debit(BalanceType.CASH, BigDecimal.valueOf(50));
 
             // Then
-            assertEquals(BigDecimal.valueOf(150), balance.getBalance(BalanceType.CASH));
+            assertEquals(BigDecimal.valueOf(150), newBalance.getBalance(BalanceType.CASH));
         }
 
         @Test
@@ -211,10 +211,10 @@ public class BalanceTest {
                     .build();
 
             // When
-            balance.debitAmount(BalanceType.CASH, BigDecimal.ZERO);
+            Balance newBalance = balance.debit(BalanceType.CASH, BigDecimal.ZERO);
 
             // Then
-            assertEquals(BigDecimal.valueOf(100), balance.getBalance(BalanceType.CASH));
+            assertEquals(BigDecimal.valueOf(100), newBalance.getBalance(BalanceType.CASH));
         }
 
         @Test
@@ -227,10 +227,10 @@ public class BalanceTest {
                     .build();
 
             // When
-            balance.debitAmount(BalanceType.CASH, BigDecimal.valueOf(100));
+            Balance newBalance = balance.debit(BalanceType.CASH, BigDecimal.valueOf(100));
 
             // Then
-            assertEquals(BigDecimal.ZERO, balance.getBalance(BalanceType.CASH));
+            assertEquals(BigDecimal.ZERO, newBalance.getBalance(BalanceType.CASH));
         }
 
         @Test
@@ -244,7 +244,7 @@ public class BalanceTest {
 
             // When
             try {
-                balance.debitAmount(BalanceType.CASH, null);
+                balance.debit(BalanceType.CASH, null);
             } catch (IllegalArgumentException e) {
                 // Then
                 assertEquals("Invalid amount", e.getMessage());
@@ -263,7 +263,7 @@ public class BalanceTest {
 
             // When
             IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-                balance.debitAmount(BalanceType.CASH, BigDecimal.valueOf(-10));
+                balance.debit(BalanceType.CASH, BigDecimal.valueOf(-10));
             });
 
             // Then
@@ -281,11 +281,11 @@ public class BalanceTest {
                     .build();
 
             // When
-            balance.debitAmount(BalanceType.CASH, BigDecimal.TEN);
+            Balance newBalance = balance.debit(BalanceType.CASH, BigDecimal.TEN);
 
             // Then
-            assertEquals(BigDecimal.valueOf(50), balance.getBalance(BalanceType.FOOD));
-            assertEquals(BigDecimal.valueOf(30), balance.getBalance(BalanceType.MEAL));
+            assertEquals(BigDecimal.valueOf(50), newBalance.getBalance(BalanceType.FOOD));
+            assertEquals(BigDecimal.valueOf(30), newBalance.getBalance(BalanceType.MEAL));
         }
 
     }
