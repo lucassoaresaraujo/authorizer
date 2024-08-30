@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+    depends_on:
+      - postgres
+    environment:
+      SPRING_PROFILES_ACTIVE: compose
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: pgsql
+      POSTGRES_USER: postgres
+      POSTGRES_DB: authorizer
+      TZ: UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - authorizer_data:/var/lib/postgresql/data
+
+volumes:
+  authorizer_data:

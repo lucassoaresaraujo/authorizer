@@ -1,0 +1,11 @@
+### POST Authorizer
+POST http://localhost:8080/authorize
+Content-Type: application/json
+Idempotency-Key: 3b139208-6092-4d6b-84aa-e835dbab4450
+
+{
+  "account": "1",
+  "totalAmount": 35.50,
+  "mcc": "5411",
+  "merchant": "UBER EATS                   SAO PAULO BR"
+}

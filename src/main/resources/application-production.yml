@@ -1,0 +1,16 @@
+postgresql:
+  username: ${DATABASE_POSTGRES_USERNAME}
+  password: ${DATABASE_POSTGRES_PASSWORD}
+  schema: ${DATABASE_POSTGRES_SCHEMA}
+  url: ${DATABASE_POSTGRES_URL}
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+  lifecycle:
+    timeout-per-shutdown-phase: "20s"
+
+server:
+  shutdown: "graceful"

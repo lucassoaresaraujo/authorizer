@@ -1,0 +1,5 @@
+postgresql:
+  username: postgres
+  password: pgsql
+  schema: authorizer
+  url: localhost:5432
