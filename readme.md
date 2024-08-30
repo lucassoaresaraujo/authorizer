@@ -5,6 +5,9 @@
 
 O **Authorizer** é um projeto desenvolvido com Spring Boot, Java 21 e PostgreSQL. O projeto oferece uma simples API para autorização de transações de cartão de crédito.
 
+
+### [Documentação técnica](./docs/design-docs.md)
+
 ## Requisitos
 
 Antes de começar, verifique se você tem os seguintes requisitos instalados:

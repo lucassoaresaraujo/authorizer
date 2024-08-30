@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface BalanceRepository extends JpaRepository<Balance, Long> {
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @QueryHints({@QueryHint(name = "javax.persistence.lock.timeout", value = "250")}) // timeout in milliseconds
+    @QueryHints({@QueryHint(name = "javax.persistence.lock.timeout", value = "250")}) // timeout in milliseconds to get the lock
     Optional<Balance> findByAccount(String accountId);
 
 

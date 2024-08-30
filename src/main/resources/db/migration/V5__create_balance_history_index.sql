@@ -1,0 +1,1 @@
+CREATE INDEX idx_balance_history_created_at ON balance_history (created_at);
