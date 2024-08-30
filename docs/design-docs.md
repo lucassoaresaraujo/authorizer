@@ -83,6 +83,7 @@ Para melhorar o desempenho do uso do banco de dados foram criados os seguintes �
 - Distribuir a carga entre múltiplos servidores (escala horizontal) para melhorar a capacidade de resposta e a resiliência do serviço.
 - Utilizar protocolos rápidos para comunicação com o autorizador, como o gRPC.
 - Evitar grandes abstrações no projeto, como o JPA, e optar por uma implementação mais direta que não introduza camadas adicionais.
+- Dimensionar a infraestrutura necessária de acordo com a demanda (elasticidade)
 - Fazer a configuração adequada do pool de conexões da aplicação.
 
 ``` 
@@ -96,7 +97,6 @@ Para melhorar o desempenho do uso do banco de dados foram criados os seguintes �
       pool-name: master
 
 ```
-
 
 ### Transações simultâneas
 
