@@ -24,7 +24,7 @@ Para rodar o projeto usando Docker Compose, siga estas etapas:
 1. Navegue até a raiz do projeto:
 
    ```sh
-   cd /caminho/para/seu/projeto
+   cd /authorizer
 
 2. Certifique-se de que o arquivo docker-compose.yml está na raiz do projeto e está corretamente configurado.
 
