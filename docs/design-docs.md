@@ -25,7 +25,7 @@ O adquirente encaminha a solicitação para a bandeira do cartão (como Visa ou 
 
 ## Visão geral da arquitetura sugerida
 
-![Visão geral da arquitetura](./imgs/componentes.png) 
+![Visão geral da arquitetura](./imgs/infra.png) 
 
 Na arquitetura sugerida, o banco emissor possui um servidor localizado em um datacenter, que mantém uma conexão direta com a bandeira do cartão de crédito. Nesse servidor, é executada uma aplicação gateway, responsável por manter uma conexão ativa com a interface da bandeira via TCP, utilizando o [formato ISO-8583](https://pt.wikipedia.org/wiki/ISO_8583).
 
