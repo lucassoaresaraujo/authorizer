@@ -26,10 +26,8 @@ Para rodar o projeto usando Docker Compose, siga estas etapas:
    ```sh
    cd /authorizer
 
-2. Certifique-se de que o arquivo docker-compose.yml está na raiz do projeto e está corretamente configurado.
 
-
-3. Execute o comando Docker Compose para iniciar os contêineres:
+2. Execute o comando Docker Compose para iniciar os contêineres:
    ```sh
    docker compose up -d
    ```
@@ -38,7 +36,7 @@ Para rodar o projeto usando Docker Compose, siga estas etapas:
 
 
 
-4. A API estará disponível em http://localhost:8080
+3. A API estará disponível em http://localhost:8080
 
 
 ## Testando a API
